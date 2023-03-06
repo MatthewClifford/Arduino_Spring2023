@@ -38,13 +38,18 @@ void setup() {
 void loop() {
   digitalWrite(12, HIGH);   // turn pin 12 to high so LED turns on
   digitalWrite(11, HIGH);   // turn pin 11 to high so LED turns on
-  delay(1000);                       // wait for a second
+  delay(25);                       // wait for a second
   digitalWrite(12, LOW);    // turn pin 12 to LOW so LED turns off
   digitalWrite(11, LOW);    // turn pin 11 to LOW so LED turns off
-  delay(1000);                       // wait for a second
+  delay(25);                       // wait for a second
 
   digitalWrite(12, HIGH);   // turn pin 12 to high so LED turns on
-  delay(250);                       // wait for a quarter of a second
+  delay(25);                       // wait for a quarter of a second
   digitalWrite(12, LOW);    // turn pin 12 to LOW so LED turns off
-  delay(250);                        // wait for a quarter of a second
+  delay(25);                        // wait for a quarter of a second
+
+  digitalWrite(10, HIGH);   // turn pin 10 to high so LED turns on
+  delay(25);                       // wait for a quarter of a second
+  digitalWrite(10, LOW);    // turn pin 10 to LOW so LED turns off
+  delay(25);                        // wait for a quarter of a second
 }
