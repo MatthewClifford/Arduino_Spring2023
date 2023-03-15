@@ -2,21 +2,7 @@
 // Date: 3.14.23
 // Program: Fade
 
-
-/*
-  Fade
-
-  This example shows how to fade an LED on pin 9 using the analogWrite()
-  function.
-
-  The analogWrite() function uses PWM, so if you want to change the pin you're
-  using, be sure to use another PWM capable pin. On most Arduino, the PWM pins
-  are identified with a "~" sign, like ~3, ~5, ~6, ~9, ~10 and ~11.
-
-  This example code is in the public domain.
-
-  https://www.arduino.cc/en/Tutorial/BuiltInExamples/Fade
-*/
+//resource: https://arduinointro.com/projects/2-leds-alternate-fade-effect-using-the-for-loop
 
 int led_ten = 10;      // Pin 10 utilizing PWM
 int led_eleven = 11;   // Pin 11 utilizing PWM
@@ -32,18 +18,35 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
-  // set the brightness of pin 10:
-  analogWrite(led_ten, brightness);
-  analogWrite(led_eleven, brightness);
-
-
-  // change the brightness for next time through the loop:
-  brightness = brightness + fadeAmount;
-
-  // reverse the direction of the fading at the ends of the fade:
-  if (brightness <= 0 || brightness >= 255) {
-    fadeAmount = -fadeAmount;
+  for (int fadeValue = 0 ; fadeValue <= 255; fadeValue = fadeValue+5) {
+    // sets the value (range from 0 to 255):
+    analogWrite(led_ten, fadeValue);
+    // wait for 30 milliseconds to see the dimming effect
+    delay(30);
   }
-  // wait for 30 milliseconds to see the dimming effect
-  delay(30);
+
+  // fade out from max to min in increments of 5 points:
+  for (int fadeValue = 255 ; fadeValue >= 0; fadeValue = fadeValue-5) {
+    // sets the value (range from 0 to 255):
+    analogWrite(led_ten, fadeValue);
+    // wait for 30 milliseconds to see the dimming effect
+    delay(30);
+  }
+
+  // fade in from min to max in increments of 5 points:
+  for (int fadeValue = 0 ; fadeValue <= 255; fadeValue = fadeValue+5) {
+    // sets the value (range from 0 to 255):
+    analogWrite(led_eleven, fadeValue);
+    // wait for 30 milliseconds to see the dimming effect
+    delay(30);
+  }
+
+  // fade out from max to min in increments of 5 points:
+  for (int fadeValue = 255 ; fadeValue >= 0; fadeValue = fadeValue-5) {
+    // sets the value (range from 0 to 255):
+    analogWrite(led_eleven, fadeValue);
+    // wait for 30 milliseconds to see the dimming effect
+    delay(30);
+  }
+  
 }
