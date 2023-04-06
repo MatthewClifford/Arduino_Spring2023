@@ -1,22 +1,21 @@
-//update from SAnwandter
 
-int ROW_1 = 2;
-int ROW_2 = 3;
-int ROW_3 = 4;
-int ROW_4 = 5;
-int ROW_5 = 6;
-int ROW_6 = 7;
-int ROW_7 = 8;
-int ROW_8 = 9;
+byte ROW_1 = 2;
+byte ROW_2 = 3;
+byte ROW_3 = 4;
+byte ROW_4 = 5;
+byte ROW_5 = 6;
+byte ROW_6 = 7;
+byte ROW_7 = 8;
+byte ROW_8 = 9;
 
-int COL_1 = 10;
-int COL_2 = 11;
-int COL_3 = 12;
-int COL_4 = 13;
-int COL_5 = A0;
-int COL_6 = A1;
-int COL_7 = A2;
-int COL_8 = A3;
+byte COL_1 = 10;
+byte COL_2 = 11;
+byte COL_3 = 12;
+byte COL_4 = 13;
+byte COL_5 = A0;
+byte COL_6 = A1;
+byte COL_7 = A2;
+byte COL_8 = A3;
 
 const byte rows[] = {
     ROW_1, ROW_2, ROW_3,   ROW_4, ROW_5, ROW_6, ROW_7, ROW_8
@@ -68,10 +67,10 @@ void setup()
     // the display will be very dim.
     for (byte   i = 2; i <= 13; i++)
         pinMode(i, OUTPUT);
-    pinMode(A0, OUTPUT);
-     pinMode(A1, OUTPUT);
-    pinMode(A2, OUTPUT);
-    pinMode(A3, OUTPUT);
+        pinMode(A0, OUTPUT);
+        pinMode(A1, OUTPUT);
+        pinMode(A2, OUTPUT);
+        pinMode(A3, OUTPUT);
 }
 
 void   loop() {
@@ -130,10 +129,10 @@ timeCount   = 0;
           // if You set   (~buffer2[i] >> a) then You will have positive
           digitalWrite(col[a],   (buffer2[i] >> a) & 0x01); // initiate whole column
           
-          delayMicroseconds(100);        // uncoment deley for diferent speed of display
-          //delayMicroseconds(1000);
-           //delay(10);
-          //delay(100);
+          delayMicroseconds(100);        
+          delayMicroseconds(1000);
+           delay(10);
+           delay(100);
           
           digitalWrite(col[a],   1);      // reset whole column
         }
