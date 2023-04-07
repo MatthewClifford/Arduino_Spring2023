@@ -1,21 +1,22 @@
+#include <FrequencyTimer2.h>
 
-byte ROW_1 = 2;
-byte ROW_2 = 3;
-byte ROW_3 = 4;
-byte ROW_4 = 5;
-byte ROW_5 = 6;
-byte ROW_6 = 7;
-byte ROW_7 = 8;
-byte ROW_8 = 9;
+byte COL_1 = 2;
+byte COL_2 = 3;
+byte COL_3 = 4;
+byte COL_4 = 5;
+byte COL_5 = 6;
+byte COL_6 = 7;
+byte COL_7 = 8;
+byte COL_8 = 9;
 
-byte COL_1 = 10;
-byte COL_2 = 11;
-byte COL_3 = 12;
-byte COL_4 = 13;
-byte COL_5 = A0;
-byte COL_6 = A1;
-byte COL_7 = A2;
-byte COL_8 = A3;
+byte ROW_1 = 10;
+byte ROW_2 = 11;
+byte ROW_3 = 12;
+byte ROW_4 = 13;
+byte ROW_5 = A0;
+byte ROW_6 = A1;
+byte ROW_7 = A2;
+byte ROW_8 = A3;
 
 const byte rows[] = {
     ROW_1, ROW_2, ROW_3,   ROW_4, ROW_5, ROW_6, ROW_7, ROW_8
@@ -26,9 +27,9 @@ const byte col[] = {
 
 // The display buffer
 //   It's prefilled with a smiling face (1 = ON, 0 = OFF)
-byte ALL[] = {B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111};
+byte   ALL[] = {B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111};
 byte   EX[] = {B00000000,B00010000,B00010000,B00010000,B00010000,B00000000,B00010000,B00000000};
-byte   A[] = {  B00000000,B00111100,B01100110,B01100110,B01111110,B01100110,B01100110,B01100110};
+byte   A[] = {B00000000,B00111100,B01100110,B01100110,B01111110,B01100110,B01100110,B01100110};
 byte   B[] = {B01111000,B01001000,B01001000,B01110000,B01001000,B01000100,B01000100,B01111100};
 byte   C[] = {B00000000,B00011110,B00100000,B01000000,B01000000,B01000000,B00100000,B00011110};
 byte   D[] = {B00000000,B00111000,B00100100,B00100010,B00100010,B00100100,B00111000,B00000000};
@@ -118,7 +119,7 @@ else {
 timeCount   = 0;
 }
 }
- void  drawScreen(byte buffer2[])
+ void drawScreen(byte buffer2[])
  { 
    // Turn on each   row in series
     for (byte i = 0; i < 8; i++)        // count next row
@@ -140,6 +141,7 @@ timeCount   = 0;
         // otherwise last row will intersect with next   row
     }
 }
+
 // 
   /* this is siplest resemplation how for loop is working   with each row.
     digitalWrite(COL_1, (~b >> 0) & 0x01); // Get the 1st bit:   10000000
